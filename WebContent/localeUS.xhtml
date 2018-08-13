@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<f:view locale="us">
+	<h:head>
+		<title>JSF</title>
+	</h:head>
+	<h:body>
+		<h:form>
+		#{msg.indexName} <h:inputText value="#{user.name}" />
+			<br />
+		#{msg.indexPassword} <h:inputSecret value="#{user.pass}" />
+			<br />
+			<h:commandButton value="Login" action="welcome" />
+		</h:form>
+	</h:body>
+</f:view>
+</html>

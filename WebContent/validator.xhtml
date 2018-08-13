@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>VALIDATOR</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3">
+			f:validateRequired:
+			<h:inputText id="t1" value="#{validatorBean.text}">
+				<f:validateRequired />
+			</h:inputText>
+			<h:message for="t1" style="color:red" />
+			
+			h:inputText required="true":
+			<h:inputText id="t2" value="#{validatorBean.text}" required="true" />
+			<h:message for="t2" style="color:red" />
+			
+			f:validator validatorId="javax.faces.Required":
+			<h:inputText id="t3" value="#{validatorBean.text}">
+				<f:validator validatorId="javax.faces.Required" />
+			</h:inputText>
+			<h:message for="t3" style="color:red" />
+			
+			h:inputText validator="javax.faces.Required":
+			<h:inputText id="t4" value="#{validatorBean.text}"
+				validator="javax.faces.Required" />
+			<h:message for="t4" style="color:red" />
+		</h:panelGrid>
+		<h:commandButton value="Validate" action="validator" />
+	</h:form>
+</h:body>
+
+</html>

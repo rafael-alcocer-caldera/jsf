@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>CONVERTER</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3">
+			Fecha (ddmmyyyy): 
+			<h:inputText id="f" value="#{converterBean.fecha}">
+				<f:convertDateTime pattern="ddmmyyyy" />
+			</h:inputText>
+			<h:message for="f" style="color:red" />
+			
+			Hora (HHmmss): 
+			<h:inputText id="h" value="#{converterBean.hora}">
+				<f:convertDateTime pattern="HHmmss" />
+			</h:inputText>
+			<h:message for="h" style="color:red" />
+		</h:panelGrid>
+		<h:commandButton value="Convert" action="converterResult" />
+	</h:form>
+</h:body>
+
+</html>
