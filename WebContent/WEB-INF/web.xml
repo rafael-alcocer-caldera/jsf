@@ -5,23 +5,33 @@
 	id="WebApp_ID" version="2.5">
 
 	<display-name>jsf</display-name>
+
+	<!-- La siguiente linea asegura que si el usuario introduce: http://localhost:8080/jsf 
+		el servidor de aplicaciones automaticamente cargue la pagina /faces/index.xhtml -->
 	<welcome-file-list>
 		<welcome-file>faces/index.xhtml</welcome-file>
 	</welcome-file-list>
+
+	<!-- Configuracion del Servlet -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 	</servlet>
+
+	<!-- Asegura que todas las URLs con el prefijo /faces/ sean procesadas por 
+		el Faces Servlet -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
+
+	<!-- Se agrega soporte para depuracion (debugging) -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
 	</context-param>
 
-	<!-- Enabling Authentication -->
+	<!-- Habilitar Autenticacion (Authentication) -->
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
@@ -30,11 +40,12 @@
 		</form-login-config>
 	</login-config>
 
-	<!-- Mapping Roles -->
+	<!-- Mapeo de Roles -->
 	<security-role>
 		<role-name>Admin</role-name>
 	</security-role>
 
+	<!-- Restringir el acceso a los recursos: Autenticacion (Authorization) -->
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>RAC</web-resource-name>

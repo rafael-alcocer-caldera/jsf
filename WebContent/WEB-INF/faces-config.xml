@@ -24,5 +24,13 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 		<managed-bean-class>rafael.alcocer.caldera.beans.UsuarioBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>exitoso</from-outcome>
+			<to-view-id>/exitoso.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
