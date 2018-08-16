@@ -20,6 +20,15 @@
 				<f:param name="nombre" value="Rafael" />
 				<f:param name="apellido" value="Alcocer" />
 			</h:link>
+			<h:button value="Cuatro"
+				outcome="bookmarkResult?nombre=Rafael&amp;apellido=Alcocer" />
+			<h:button value="Cinco"
+				outcome="bookmarkResult?nombre=Rafael&amp;apellido=Alcocer"
+				includeViewParams="true" />
+			<h:button value="Seis" outcome="bookmarkResult">
+				<f:param name="nombre" value="Rafael" />
+				<f:param name="apellido" value="Alcocer" />
+			</h:button>
 		</h:panelGrid>
 	</h:form>
 </h:body>

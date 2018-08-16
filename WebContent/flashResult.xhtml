@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>FLASH RESULT</title>
+</h:head>
+<h:body>
+	<p>AQUI MANTENGO EL MENSAJE PARA UNA SIGUIENTE PETICION
+		(flash.keep.mensaje)</p>
+	<p>
+	<h1>
+		<h:outputText value="#{flash.keep.mensaje}" />
+	</h1>
+	</p>
+	<p>
+		<h:panelGrid>
+			<h:link value="Previous" outcome="flash" />
+			<h:link value="Next" outcome="flashResult2" />
+		</h:panelGrid>
+	</p>
+</h:body>
+
+</html>
