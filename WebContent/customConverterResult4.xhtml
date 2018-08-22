@@ -6,21 +6,16 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>FLASH RESULT</title>
+	<title>RESULTADO CUSTOM CONVERTER 4</title>
 </h:head>
 <h:body>
-	<p>AQUI MANTENGO EL MENSAJE PARA UNA SIGUIENTE PETICION
-		(flash.keep.mensaje)
-	</p>
-	<h1>
-		<h:outputText value="#{flash.keep.mensaje}" />
-	</h1>
-	<p>
-		<h:panelGrid>
-			<h:link value="Previous" outcome="flash" />
-			<h:link value="Next" outcome="flashResult2" />
+	<h:form>
+		<h:panelGrid columns="2">
+		Tarjeta de credito:
+		<h:outputText value="#{customConverterBean4.creditCard4}" />
 		</h:panelGrid>
-	</p>
+		<h:commandButton value="Back" action="customConverter4" />
+	</h:form>
 </h:body>
 
 </html>

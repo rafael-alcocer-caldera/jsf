@@ -11,7 +11,7 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 			<var>msg</var>
 		</resource-bundle>
 	</application>
-	
+
 	<application>
 		<locale-config>
 			<default-locale>us</default-locale>
@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 		<managed-bean-class>rafael.alcocer.caldera.beans.UsuarioBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<navigation-rule>
 		<navigation-case>
 			<from-outcome>exitoso</from-outcome>
@@ -32,5 +32,15 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+
+	<converter>
+		<converter-id>rafael.alcocer.caldera.CustomConverterId1</converter-id>
+		<converter-class>rafael.alcocer.caldera.converters.CustomConverter1</converter-class>
+	</converter>
+	
+	<converter>
+		<converter-for-class>rafael.alcocer.caldera.beans.CreditCard3</converter-for-class>
+		<converter-class>rafael.alcocer.caldera.converters.CustomConverter3</converter-class>
+	</converter>
 
 </faces-config>

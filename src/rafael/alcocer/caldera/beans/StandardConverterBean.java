@@ -15,43 +15,47 @@
  */
 package rafael.alcocer.caldera.beans;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 
 /**
+ * Este Bean es para poder mostrar los convertidores propios de la libreria de
+ * JSF.
  * 
  * @author Rafael Alcocer Caldera
  * @version 1.0
  *
  */
 @ManagedBean
-public class BookmarkBean {
+public class StandardConverterBean {
 
-    private String nombre;
-    private String apellido;
-    private String resultado;
+    private Date fecha;
+    private Date hora;
+    private double cantidad;
 
-    public String getNombre() {
-	return nombre;
+    public Date getFecha() {
+	return fecha;
     }
 
-    public void setNombre(String nombre) {
-	this.nombre = nombre;
+    public void setFecha(Date fecha) {
+	this.fecha = fecha;
     }
 
-    public String getApellido() {
-	return apellido;
+    public Date getHora() {
+	return hora;
     }
 
-    public void setApellido(String apellido) {
-	this.apellido = apellido;
+    public void setHora(Date hora) {
+	this.hora = hora;
     }
 
-    public String getResultado() {
-	String n = "NOMBRE: " + this.nombre;
-	String a = "APELLIDO: " + this.apellido;
-
-	this.resultado = n + "  " + a;
-
-	return resultado;
+    public double getCantidad() {
+	return cantidad;
     }
+
+    public void setCantidad(double cantidad) {
+	this.cantidad = cantidad;
+    }
+
 }

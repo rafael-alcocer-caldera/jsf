@@ -15,8 +15,6 @@
  */
 package rafael.alcocer.caldera.beans;
 
-import java.util.Date;
-
 import javax.faces.bean.ManagedBean;
 
 /**
@@ -26,25 +24,16 @@ import javax.faces.bean.ManagedBean;
  *
  */
 @ManagedBean
-public class ConverterBean {
+public class CustomConverterBean {
 
-    private Date fecha;
-    private Date hora;
+    private CreditCard creditCard = new CreditCard("");
 
-    public Date getFecha() {
-	return fecha;
+    public CreditCard getCreditCard() {
+	return creditCard;
     }
 
-    public void setFecha(Date fecha) {
-	this.fecha = fecha;
-    }
-
-    public Date getHora() {
-	return hora;
-    }
-
-    public void setHora(Date hora) {
-	this.hora = hora;
+    public void setCreditCard(CreditCard creditCard) {
+	this.creditCard = creditCard;
     }
 
 }

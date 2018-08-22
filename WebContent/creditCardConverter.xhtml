@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>CREDIT CARD CONVERTER</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3">
+			Ingresa el numero de tarjeta de credito: 
+			<h:inputText id="card" label="Credit Card"
+				value="#{creditCardBean.creditCard}"
+				converter="rafael.alcocer.caldera.ConvertCreditCard">
+				<f:converter converterId="rafael.alcocer.caldera.ConvertCreditCard" />
+			</h:inputText>
+			<h:message for="card" style="color:red" />
+		</h:panelGrid>
+		<h:commandButton value="Resultado" action="creditCardConverterResult" />
+	</h:form>
+</h:body>
+
+</html>

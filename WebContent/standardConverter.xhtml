@@ -6,24 +6,29 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>CONVERTER</title>
+	<title>STANDARD CONVERTER</title>
 </h:head>
 <h:body>
 	<h:form>
 		<h:panelGrid columns="3">
 			Fecha (ddmmyyyy): 
-			<h:inputText id="f" value="#{converterBean.fecha}">
+			<h:inputText id="f" value="#{standardConverterBean.fecha}">
 				<f:convertDateTime pattern="ddmmyyyy" />
 			</h:inputText>
 			<h:message for="f" style="color:red" />
 			
 			Hora (HHmmss): 
-			<h:inputText id="h" value="#{converterBean.hora}">
+			<h:inputText id="h" value="#{standardConverterBean.hora}">
 				<f:convertDateTime pattern="HHmmss" />
 			</h:inputText>
 			<h:message for="h" style="color:red" />
+			
+			Cantidad (xxxx.xx):
+			<h:inputText value="#{standardConverterBean.cantidad}">
+				<f:convertNumber minFractionDigits="2"/>
+			</h:inputText>
 		</h:panelGrid>
-		<h:commandButton value="Convert" action="converterResult" />
+		<h:commandButton value="Convert" action="standardConverterResult" />
 	</h:form>
 </h:body>
 

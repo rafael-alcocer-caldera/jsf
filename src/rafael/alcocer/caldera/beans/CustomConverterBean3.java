@@ -24,34 +24,16 @@ import javax.faces.bean.ManagedBean;
  *
  */
 @ManagedBean
-public class BookmarkBean {
+public class CustomConverterBean3 {
 
-    private String nombre;
-    private String apellido;
-    private String resultado;
+    private CreditCard3 creditCard3 = new CreditCard3("");
 
-    public String getNombre() {
-	return nombre;
+    public CreditCard3 getCreditCard3() {
+	return creditCard3;
     }
 
-    public void setNombre(String nombre) {
-	this.nombre = nombre;
+    public void setCreditCard3(CreditCard3 creditCard3) {
+	this.creditCard3 = creditCard3;
     }
 
-    public String getApellido() {
-	return apellido;
-    }
-
-    public void setApellido(String apellido) {
-	this.apellido = apellido;
-    }
-
-    public String getResultado() {
-	String n = "NOMBRE: " + this.nombre;
-	String a = "APELLIDO: " + this.apellido;
-
-	this.resultado = n + "  " + a;
-
-	return resultado;
-    }
 }

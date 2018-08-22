@@ -6,54 +6,54 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>CONVERTER RESULT</title>
+	<title>STANDARD CONVERTER RESULT</title>
 </h:head>
 <h:body>
 	<h:panelGrid columns="2">
 		f:convertDateTime:
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime />
 		</h:outputText>
 		
 		f:converter converterId="javax.faces.DateTime":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:converter converterId="javax.faces.DateTime" />
 		</h:outputText>
 		
 		h:outputText converter="javax.faces.DateTime":
-		<h:outputText value="#{converterBean.fecha}"
+		<h:outputText value="#{standardConverterBean.fecha}"
 			converter="javax.faces.DateTime" />
 
 		-----------------------------------------
 		<h:outputText value=" " escape="false" />
 			
 		f:convertDateTime dateStyle="default":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime dateStyle="default" />
 		</h:outputText>
 		
 		f:convertDateTime dateStyle="short":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime dateStyle="short" />
 		</h:outputText>
 		
 		f:convertDateTime dateStyle="medium":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime dateStyle="medium" />
 		</h:outputText>
 		
 		f:convertDateTime dateStyle="long":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime dateStyle="long" />
 		</h:outputText>
 		
 		f:convertDateTime dateStyle="full":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime dateStyle="full" />
 		</h:outputText>
 		
 		f:convertDateTime pattern="dd-mm-yyyy":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime pattern="dd-mm-yyyy" />
 		</h:outputText>
 
@@ -61,32 +61,32 @@
 		<h:outputText value=" " escape="false" />
 		
 		f:convertDateTime type="time" timeStyle="default":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" timeStyle="default" />
 		</h:outputText>
 		
 		f:convertDateTime type="time" timeStyle="short":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" timeStyle="short" />
 		</h:outputText>
 		
 		f:convertDateTime type="time" timeStyle="medium":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" timeStyle="medium" />
 		</h:outputText>
 		
 		f:convertDateTime type="time" timeStyle="long":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" timeStyle="long" />
 		</h:outputText>
 		
 		f:convertDateTime type="time" timeStyle="full":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" timeStyle="full" />
 		</h:outputText>
 		
 		f:convertDateTime type="time" pattern="HH:mm:ss:SS":
-		<h:outputText value="#{converterBean.hora}">
+		<h:outputText value="#{standardConverterBean.hora}">
 			<f:convertDateTime type="time" pattern="HH:mm:ss:SS" />
 		</h:outputText>
 		
@@ -94,8 +94,21 @@
 		<h:outputText value=" " escape="false" />
 		
 		f:convertDateTime type="both" pattern="dd-mm-yyyy HH:mm:ss:SS":
-		<h:outputText value="#{converterBean.fecha}">
+		<h:outputText value="#{standardConverterBean.fecha}">
 			<f:convertDateTime type="both" pattern="dd-mm-yyyy HH:mm:ss:SS" />
+		</h:outputText>
+		
+		-----------------------------------------
+		<h:outputText value=" " escape="false" />
+		
+		f:convertNumber type="currency":
+		<h:outputText value="#{standardConverterBean.cantidad}">
+			<f:convertNumber type="currency" />
+		</h:outputText>
+		
+		f:convertNumber type="percent":
+		<h:outputText value="#{standardConverterBean.cantidad}">
+			<f:convertNumber type="percent" />
 		</h:outputText>
 	</h:panelGrid>
 </h:body>
