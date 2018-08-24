@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>EVENTS</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h1>VALUE CHANGE LISTENER</h1>
+		<h:panelGrid columns="2">
+			#{msg.estadoProvincia}
+			<h:inputText value="#{eventBean.estadoProvincia}" />
+			
+			#{msg.pais}
+			<h:selectOneMenu value="#{eventBean.pais}" onchange="submit()"
+				valueChangeListener="#{eventBean.cambiarPaisListener}">
+				<f:selectItems value="#{eventBean.paises}" var="loc"
+					itemLabel="#{loc.displayCountry}" itemValue="#{loc.country}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+		<h1>ACTION LISTENER</h1>
+		<h:panelGrid columns="2">
+			#{msg.outcome}
+			<h:inputText value="#{eventBean.outcome}" />
+		</h:panelGrid>
+		<h:commandButton value="Action Listener"
+			actionListener="#{eventBean.establecerOutcomeActionListener}"
+			action="#{eventBean.outcome}" />
+	</h:form>
+</h:body>
+
+</html>
