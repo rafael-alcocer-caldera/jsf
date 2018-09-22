@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rac="http://java.sun.com/jsf/composite/util">
+
+<h:head>
+	<title>USANDO COMPOSITE COMPONENT 2</title>
+</h:head>
+
+<h:body>
+	<rac:login2 usuarioText="Usuario:" 
+				passwordText="Password:"
+				usuarioInput="#{compositeBean2.usuario}"
+				passwordInput="#{compositeBean2.password}" 
+				commandText="LOGIN"
+				commandAction="#{compositeBean2.login}">
+
+		<f:facet name="header">HEADER FACET</f:facet>
+		<f:validateLength for="usuarioValidation" minimum="5" maximum="15" />
+		<f:validateRequired for="form:password" />
+		<f:actionListener for="botonLogin"
+			type="rafael.alcocer.caldera.listeners.LoginActionListener" />
+			
+		<h:outputText value="AQUI SE MUESTRA composite:insertChildren" />
+		<f:facet name="footer">FOOTER FACET</f:facet>
+	</rac:login2>
+</h:body>
+
+</html>

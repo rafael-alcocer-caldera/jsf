@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="usuarioText" />
+	<composite:attribute name="passwordText" />
+	<composite:attribute name="usuarioInput" />
+	<composite:attribute name="passwordInput" />
+	<composite:attribute name="commandText" />
+	<composite:attribute name="commandAction"
+		method-signature="java.lang.String action()" />
+	<composite:editableValueHolder name="usuarioValidation"
+		targets="form:usuario" />
+	<!-- No targets but has to specify to the full name of the component-->
+	<composite:editableValueHolder name="form:password" />
+	<!-- Exposing the commandButton -->
+	<composite:actionSource name="botonLogin" targets="form:botonLogin" />
+	<composite:facet name="header" />
+	<composite:facet name="footer" />
+</composite:interface>
+
+<composite:implementation>
+	<h1><composite:renderFacet name="header" /></h1>
+	<br />
+	<h:form id="form">
+		<h2>#{cc.resourceBundleMap.titulo}</h2>
+		<h:panelGrid colums="2">
+					#{cc.attrs.usuarioText}
+					<h:inputText id="usuario" value="#{cc.attrs.usuarioInput}" />
+					
+					#{cc.attrs.passwordText}
+					<h:inputSecret id="password" value="#{cc.attrs.passwordInput}" />
+		</h:panelGrid>
+		<h:commandButton id="botonLogin" value="#{cc.attrs.commandText}"
+			action="#{cc.attrs.commandAction}" />
+	</h:form>
+	<composite:insertChildren />
+	<br />
+	<h1><composite:renderFacet name="footer" /></h1>
+</composite:implementation>
+
+</html>
