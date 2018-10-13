@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>ACTION LISTENER</title>
+</h:head>
+<h:body>
+	<h1>ACTION LISTENER</h1>
+	<h:form>
+		<h:panelGrid>
+			<!-- 
+				Action Event Tag
+				Funciona para una clase que implemente ActionListener y 
+				opcionalmente puede estar anotada con @ManagedBean o @Named  
+			-->
+			<h:commandButton value="MyActionListener with type">
+				<f:actionListener type="rafael.alcocer.caldera.listeners.MyActionListener" />
+			</h:commandButton>
+
+			<!-- 
+				Action Event Tag
+				Funciona para una clase que implemente ActionListener y 
+				debe estar anotada con @ManagedBean o @Named  
+			-->
+			<h:commandButton value="MyActionListener2 Named Bean with binding">
+				<f:actionListener binding="#{myActionListener2}" />
+			</h:commandButton>
+
+			<!-- 
+				Action Event Attribute
+				Funciona para un @ManagedBean o @Named
+				El metodo uno() del Bean puede o no tener argumentos.
+				Incluyendo ActionEvent  
+			-->
+			<h:commandButton value="Uno" actionListener="#{actionListenerBean.uno}" />
+			
+			<!-- 
+				Action Event Attribute y Action Event Tags
+				Funciona para un @ManagedBean o @Named
+				public void dos(ActionEvent event)
+				public void tres()
+				public void cuatro(ActionEvent event)
+				
+				Nota: En el attributo binding del tag <f:actionListener...>
+				      debe de ponerse () para el metodo. Ejemplo: tres()
+				      Si solo se pone el nombre sin los parentesis obtenemos:
+				      The class 'rafael.alcocer.caldera.beans.ActionListenerBean' 
+				      does not have the property 'tres'.
+				      javax.el.PropertyNotFoundException...
+			-->
+			<h:commandButton value="Dos Tres Cuatro" actionListener="#{actionListenerBean.dos}">
+				<f:actionListener binding="#{actionListenerBean.tres()}" />
+				<f:actionListener binding="#{actionListenerBean.cuatro('HOLA')}" />
+			</h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+
+</html>
