@@ -47,11 +47,11 @@ public class ActionListenerBean {
 
     public void tres() {
 	System.out.println("##### Tres...");
-	System.out.println("<f:actionListener binding=\"#{actionListenerBean.tres}\" />");
+	System.out.println("<f:actionListener binding=\"#{actionListenerBean.tres()}\" />");
     }
 
     public void cuatro(String s) {
 	System.out.println("##### Cuatro..." + s);
-	System.out.println("<f:actionListener binding=\"#{actionListenerBean.cuatro}\" />");
+	System.out.println("<f:actionListener binding=\"#{actionListenerBean.cuatro('HOLA')}\" />");
     }
 }

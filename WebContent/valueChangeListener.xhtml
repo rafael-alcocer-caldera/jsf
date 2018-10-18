@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>VALUE CHANGE LISTENER</title>
+</h:head>
+<h:body>
+	<h1>VALUE CHANGE LISTENER</h1>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			Teclea algo:
+			<!-- 
+				Value Change Event Tag
+				Funciona para una clase que implemente ValueChangeListener y 
+				opcionalmente puede estar anotada con @ManagedBean o @Named  
+			-->
+			<h:inputText value="#{valueChangeListenerBean.text}" onkeyup="submit()">
+				<f:valueChangeListener type="rafael.alcocer.caldera.listeners.MyValueChangeListener" />
+			</h:inputText>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form2">
+		<h:panelGrid columns="2">
+			Teclea algo:
+			<!-- 
+				Value Change Event Tag
+				Funciona para una clase que implemente ValueChangeListener y 
+				debe estar anotada con @ManagedBean o @Named  
+			-->
+			<h:inputText value="#{valueChangeListenerBean.text2}" onkeyup="submit()">
+				<f:valueChangeListener binding="#{myValueChangeListener2}" />
+			</h:inputText>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form3">
+		<!-- 
+			Value Change Event Attribute
+			Funciona para un @ManagedBean o @Named
+			El metodo uno() del Bean puede o no tener argumentos.
+			Incluyendo ValueChangeEvent  
+		-->
+		<h:selectOneMenu value="#{valueChangeListenerBean.text3}" valueChangeListener="#{valueChangeListenerBean.uno}" onchange="submit()">
+			<f:selectItem itemLabel="Uno" itemValue="1" />
+			<f:selectItem itemLabel="Dos" itemValue="2" />
+		</h:selectOneMenu>
+	</h:form>
+	<h:form id="form4">
+		<!-- 
+			Value Change Event Attribute y Value Change Event Tags
+			Funciona para un @ManagedBean o @Named
+			public void dos(ValueChangeEvent event)
+			public void tres()
+			public void cuatro(String s)
+				
+			Nota: El metodo dos en valueChangeListener
+			      no debe llevar parentesis ().
+			      Si se le ponen marca:
+			      javax.faces.event.AbortProcessingException: Method dos not found
+			      
+			      En el attributo binding del tag <f:valueChangeListener...>
+				  debe de ponerse () para el metodo. Ejemplo: tres()
+				  Si solo se pone el nombre sin los parentesis obtenemos:
+				  The class 'rafael.alcocer.caldera.beans.ValueChangeListenerBean' 
+				  does not have the property 'tres'.
+		-->
+		<h:inputText value="#{valueChangeListenerBean.text4}" valueChangeListener="#{valueChangeListenerBean.dos}" onblur="submit()">
+			<f:valueChangeListener binding="#{valueChangeListenerBean.tres()}" />
+			<f:valueChangeListener binding="#{valueChangeListenerBean.cuatro('HOLA')}" />
+		</h:inputText>
+	</h:form>
+</h:body>
+
+</html>

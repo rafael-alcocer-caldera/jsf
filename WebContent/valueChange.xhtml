@@ -14,13 +14,12 @@
 		<h:panelGrid columns="2">
 			Selecciona una vocal:
 			<h:selectOneMenu value="#{valueChangeBean.vocal}" onchange="submit()"
-				immediate="true"
 				valueChangeListener="#{valueChangeBean.cambiarLetra}">
 				<f:selectItems value="#{valueChangeBean.vocales}" var="vocal"
 					itemLabel="#{vocal}" itemValue="#{vocal}" />
 			</h:selectOneMenu>
-			Palabra
-			<h:inputText value="#{valueChangeBean.palabra}" />
+			Vocal Seleccionada:
+			<h:outputText value="#{valueChangeBean.vocalSeleccionada}" />
 		</h:panelGrid>
 	</h:form>
 </h:body>

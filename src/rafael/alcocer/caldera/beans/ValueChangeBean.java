@@ -30,14 +30,14 @@ public class ValueChangeBean {
     public static char[] vocales = { 'A', 'E', 'I', 'O', 'U' };
 
     private String vocal;
-    private String palabra;
+    private String vocalSeleccionada;
 
     public void cambiarLetra(ValueChangeEvent event) {
 	setVocal("" + event.getNewValue());
 	System.out.println("##### cambiarLetra...");
 	System.out.println("##### getVocal(): " + getVocal());
-	setPalabra(getVocal());
-	System.out.println("##### getPalabra(): " + getPalabra());
+	setVocalSeleccionada(getVocal());
+	System.out.println("##### getVocalSeleccionada(): " + getVocalSeleccionada());
     }
 
     public String getVocal() {
@@ -48,12 +48,12 @@ public class ValueChangeBean {
 	this.vocal = vocal;
     }
 
-    public String getPalabra() {
-	return palabra;
+    public String getVocalSeleccionada() {
+	return vocalSeleccionada;
     }
 
-    public void setPalabra(String palabra) {
-	this.palabra = palabra;
+    public void setVocalSeleccionada(String vocalSeleccionada) {
+	this.vocalSeleccionada = vocalSeleccionada;
     }
 
     public char[] getVocales() {

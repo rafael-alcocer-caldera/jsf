@@ -40,6 +40,7 @@ public class EventBean {
 	for (Locale locale : paises) {
 	    if (locale.getCountry().equals(event.getNewValue())) {
 		FacesContext.getCurrentInstance().getViewRoot().setLocale(locale);
+		setEstadoProvincia("" + locale);
 	    }
 	}
     }

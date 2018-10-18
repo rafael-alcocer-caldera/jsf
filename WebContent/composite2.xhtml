@@ -11,21 +11,20 @@
 </h:head>
 
 <h:body>
-	<rac:login2 usuarioText="Usuario:" 
-				passwordText="Password:"
-				usuarioInput="#{compositeBean2.usuario}"
-				passwordInput="#{compositeBean2.password}" 
-				commandText="LOGIN"
+	<rac:login2 usuarioLabel="Usuario:" 
+				passwordLabel="Password:"
+				commandLabel="LOGIN"
+				usuarioValue="#{compositeBean2.usuario}"
+				passwordValue="#{compositeBean2.password}" 
 				commandAction="#{compositeBean2.login}">
 
-		<f:facet name="header">HEADER FACET</f:facet>
 		<f:validateLength for="usuarioValidation" minimum="5" maximum="15" />
 		<f:validateRequired for="form:password" />
-		<f:actionListener for="botonLogin"
-			type="rafael.alcocer.caldera.listeners.LoginActionListener" />
-			
+		<f:actionListener for="botonLogin" type="rafael.alcocer.caldera.listeners.LoginActionListener" />
 		<h:outputText value="AQUI SE MUESTRA composite:insertChildren" />
+		<f:facet name="header">HEADER FACET</f:facet>
 		<f:facet name="footer">FOOTER FACET</f:facet>
+		
 	</rac:login2>
 </h:body>
 

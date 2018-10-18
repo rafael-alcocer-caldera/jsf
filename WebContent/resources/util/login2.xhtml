@@ -6,15 +6,13 @@
 	xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface>
-	<composite:attribute name="usuarioText" />
-	<composite:attribute name="passwordText" />
-	<composite:attribute name="usuarioInput" />
-	<composite:attribute name="passwordInput" />
-	<composite:attribute name="commandText" />
-	<composite:attribute name="commandAction"
-		method-signature="java.lang.String action()" />
-	<composite:editableValueHolder name="usuarioValidation"
-		targets="form:usuario" />
+	<composite:attribute name="usuarioLabel" />
+	<composite:attribute name="passwordLabel" />
+	<composite:attribute name="commandLabel" />
+	<composite:attribute name="usuarioValue" />
+	<composite:attribute name="passwordValue" />
+	<composite:attribute name="commandAction" method-signature="java.lang.String action()" />
+	<composite:editableValueHolder name="usuarioValidation" targets="form:usuario" />
 	<!-- No targets but has to specify to the full name of the component-->
 	<composite:editableValueHolder name="form:password" />
 	<!-- Exposing the commandButton -->
@@ -29,14 +27,13 @@
 	<h:form id="form">
 		<h2>#{cc.resourceBundleMap.titulo}</h2>
 		<h:panelGrid colums="2">
-					#{cc.attrs.usuarioText}
-					<h:inputText id="usuario" value="#{cc.attrs.usuarioInput}" />
+		    #{cc.attrs.usuarioLabel}
+			<h:inputText id="usuario" value="#{cc.attrs.usuarioValue}" />
 					
-					#{cc.attrs.passwordText}
-					<h:inputSecret id="password" value="#{cc.attrs.passwordInput}" />
+			#{cc.attrs.passwordLabel}
+			<h:inputSecret id="password" value="#{cc.attrs.passwordValue}" />
 		</h:panelGrid>
-		<h:commandButton id="botonLogin" value="#{cc.attrs.commandText}"
-			action="#{cc.attrs.commandAction}" />
+		<h:commandButton id="botonLogin" value="#{cc.attrs.commandLabel}" action="#{cc.attrs.commandAction}" />
 	</h:form>
 	<composite:insertChildren />
 	<br />
