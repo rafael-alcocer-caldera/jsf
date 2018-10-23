@@ -23,7 +23,7 @@ import javax.faces.event.ValueChangeListener;
  * funciona para <f:valueChangeListener type="...">.
  * 
  * <h:inputText value="#{valueChangeListenerBean.text}" onkeyup="submit()">
- *     <f:valueChangeListener type="rafael.alcocer.caldera.listeners.MyValueChangeListener" />
+ *     <f:valueChangeListener type="rafael.alcocer.caldera.listeners.MyValueChangeListener" /> 
  * </h:inputText>
  * 
  * @author Rafael Alcocer Caldera
@@ -33,8 +33,8 @@ import javax.faces.event.ValueChangeListener;
 public class MyValueChangeListener implements ValueChangeListener {
 
     public void processValueChange(ValueChangeEvent event) {
-	System.out.println("##### MyValueChangeListener...");
-	System.out.println("<f:valueChangeListener type=\"rafael.alcocer.caldera.listeners.MyValueChangeListener\" />");
-	System.out.println("##### " + event.getNewValue());
+        System.out.println("##### MyValueChangeListener...");
+        System.out.println("<f:valueChangeListener type=\"rafael.alcocer.caldera.listeners.MyValueChangeListener\" />");
+        System.out.println("##### " + event.getNewValue());
     }
 }

@@ -24,7 +24,7 @@ import javax.inject.Named;
  * <f:valueChangeListener binding="#{...}" />
  * 
  * <h:inputText value="#{valueChangeListenerBean.text}" onkeyup="submit()">
- *     <f:valueChangeListener binding="#{myValueChangeListener2}" />
+ *     <f:valueChangeListener binding="#{myValueChangeListener2}" /> 
  * </h:inputText>
  * 
  * Si no se incluye la anotacion @ManagedBean o @Named no funciona para
@@ -38,8 +38,8 @@ import javax.inject.Named;
 public class MyValueChangeListener2 implements ValueChangeListener {
 
     public void processValueChange(ValueChangeEvent event) {
-	System.out.println("##### MyValueChangeListener2...");
-	System.out.println("<f:valueChangeListener binding=\"#{myValueChangeListener2}\" />");
-	System.out.println("##### " + event.getNewValue());
+        System.out.println("##### MyValueChangeListener2...");
+        System.out.println("<f:valueChangeListener binding=\"#{myValueChangeListener2}\" />");
+        System.out.println("##### " + event.getNewValue());
     }
 }
