@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Phase Listener 2</title>
+</h:head>
+<h:body>
+	<h:form>
+	   <!-- 
+           Phase Event Tag
+           Funciona para una clase que implemente PhaseListener y 
+           debe estar anotada con @ManagedBean o @Named  
+        -->
+		<h:commandButton value="MyPhaseListener with binding" action="index">
+			<f:phaseListener binding="#{myPhaseListener2}" />
+		</h:commandButton>
+	</h:form>
+</h:body>
+
+</html>
