@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-facelettaglibary_2_0.xsd">
+
+	<namespace>http://customTag.custom.com</namespace>
+	<tag>
+        <tag-name>headerTag</tag-name>
+        <source>tags/rac/headerTag.xhtml</source>
+    </tag>
+	<tag>
+		<tag-name>contentTag</tag-name>
+		<source>tags/rac/contentTag.xhtml</source>
+	</tag>
+	<tag>
+        <tag-name>footerTag</tag-name>
+        <source>tags/rac/footerTag.xhtml</source>
+    </tag>
+
+</facelet-taglib>

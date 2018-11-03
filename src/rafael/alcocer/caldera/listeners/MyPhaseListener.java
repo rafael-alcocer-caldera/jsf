@@ -33,12 +33,12 @@ import javax.faces.event.PhaseListener;
  */
 public class MyPhaseListener implements PhaseListener {
 
-    public void afterPhase(PhaseEvent arg0) {
-        System.out.println("##### MyPhaseListener... afterPhase()..." + arg0.getPhaseId());
+    public void afterPhase(PhaseEvent event) {
+        System.out.println("##### MyPhaseListener... afterPhase()..." + event.getPhaseId());
     }
 
-    public void beforePhase(PhaseEvent arg0) {
-        System.out.println("##### MyPhaseListener... beforePhase()..." + arg0.getPhaseId());
+    public void beforePhase(PhaseEvent event) {
+        System.out.println("##### MyPhaseListener... beforePhase()..." + event.getPhaseId());
     }
 
     public PhaseId getPhaseId() {

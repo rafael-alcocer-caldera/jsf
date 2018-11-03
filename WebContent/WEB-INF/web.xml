@@ -31,10 +31,13 @@
 		<param-value>Development</param-value>
 	</context-param>
 
-	<!-- Se agrega para el custom component -->
+	<!-- Se agrega para el custom component y custom tags -->
 	<context-param>
 		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
-		<param-value>/WEB-INF/counter.taglib.xml; /WEB-INF/headerTag.taglib.xml; /WEB-INF/contentTag.taglib.xml; /WEB-INF/footerTag.taglib.xml</param-value>
+		<param-value>/WEB-INF/counter.taglib.xml; /WEB-INF/headerTag.taglib.xml; 
+		             /WEB-INF/contentTag.taglib.xml; /WEB-INF/footerTag.taglib.xml;
+		             /WEB-INF/customTag.taglib.xml
+		</param-value>
 	</context-param>
 
 	<!-- Habilitar Autenticacion (Authentication) -->
